@@ -8,13 +8,36 @@ function add(e) {
   const btn1 = document.createElement("button");
   const btn2 = document.createElement("button");
   const div = document.createElement("div");
+  function rem(name) {
+
+    const index = my.indexOf(name)
+    if (index !== -1) {
+      let hi = my.splice(index, 1)
+    console.log(hi)
+
+    }
+    
+    console.log(my, name,index)
+  
+    
+  }
   div.classList.add("card");
+   
   btn1.classList.add("btn1");
+  btn1.setAttribute('onclick', "console.log(e)");
   btn2.classList.add("btn2");
   btn1.innerHTML = "Remove";
   btn2.innerHTML = "Edit";
   pera.innerHTML = e;
   div.append(pera, btn1, btn2);
+  btn1.addEventListener('click',(e)=>{
+    if (e.target.innerHTML=="Remove") { 
+      let  name = pera.innerText 
+      rem(name)
+    div.remove()
+    } 
+  })
+ 
   p.append(div);
 }
 
@@ -24,6 +47,8 @@ btn.addEventListener("click", (e) => {
   if (!(inputvalue.trim()).length == "0"&& !my.includes(inputvalue)) {
     my.push(inputvalue);
     set(my);
+    
+
     add(inputvalue);
     input.value = "";
   }
@@ -39,7 +64,9 @@ function flter() {
   Items.forEach((Item) => {
     add(Item);
     my.push(Item);
-  });
-}
+  })
+  }
 
-flter();
+flter()
+
+

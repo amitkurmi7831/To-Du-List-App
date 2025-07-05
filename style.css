@@ -22,12 +22,25 @@ body{
     box-shadow: 0px 0px 10px green;
     border-radius: 10px;
 }
+.inputdiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px green;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+
+    
+}
 input{
+    
     height: 40px;
     width: 220px;
-    border-radius: 8px;
-    border: 1px solid green;
-    margin-top: 45px;
+    /* border: 1px solid green; */
+    border: none;
+    outline: none;
     padding: 10px;
     font-family: serif;
     font-weight: 800;
@@ -38,11 +51,12 @@ input{
     height: 40px;
     width: 120px;
     font-size: 18px;
-    background-color: blue;
+    background-color: green;
     color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     outline: none;
     cursor: pointer;
+    border: none;
 }
 .card{
     width: 100%;
@@ -74,16 +88,21 @@ p{
 }
 .card button{
     height: 30px;
-    width: 70px;
-    font-size: 16px;
+    width: 80px;
+    font-size: 12px;
     background-color: rgb(255, 17, 0);
     color: white;
-    border-radius: 5px;
+    border-radius: 15px;
     outline: none;
     border: none;
     cursor: pointer;
+    font-weight: 800;
 }
 .card .EditBtn{
     background-color: rgb(37, 40, 228);
+
+}
+.card button:hover{
+    background-color: rgb(85, 39, 211);
 
 }

@@ -1,4 +1,4 @@
-const btn = document.querySelector("button");
+const addbtn = document.querySelector("button");
 const input = document.querySelector("input");
 const main = document.querySelector(".main");
 const my = [];
@@ -11,6 +11,9 @@ function rem(name) {
 
   })
   set(hi)
+    
+  
+
     
   }
 
@@ -29,21 +32,30 @@ function add(e) {
   btndiv.append(EditBtn,RemoveBtn)
   p.innerHTML = e;
   card.append(p, btndiv );
+  card.addEventListener('click',(e)=>{
+    if (e.target.innerHTML=="Remove") { 
+      let  name = p.innerText 
+      rem(name.toLocaleLowerCase())
+    card.remove()
+
+    } 
+  })
   main.append(card)
  
   // btn2.addEventListener('click',(e)=>{
-  //   if (e.target.innerHTML=="Edit") { 
+  //   if (e.target.innerHTML=="RemoveBtn") { 
   //     let  name = pera.innerText 
   //     Edit(name.toLocaleLowerCase())
   //     input.value=name
     
   //   } 
   // })
+   
  
   // p.append(div);
 }
 
-btn.addEventListener("click", (e) => {
+addbtn.addEventListener("click", (e) => {
   e.preventDefault();
   let inputvalue = input.value;
   if (!(inputvalue.trim()).length == "0"&& !my.includes(inputvalue)) {

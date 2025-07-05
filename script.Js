@@ -9,18 +9,17 @@ function add(e) {
   const btn2 = document.createElement("button");
   const div = document.createElement("div");
   function rem(name) {
+    const to = get()
 
-    const index = my.indexOf(name)
-    if (index !== -1) {
-      let hi = my.splice(index, 1)
-    console.log(hi)
+   let hi = to.filter((i)=>{
+    // console.log(name)
+    return(!i.includes(name))
 
-    }
-    
-    console.log(my, name,index)
-  
+  })
+  set(hi)
     
   }
+ 
   div.classList.add("card");
    
   btn1.classList.add("btn1");
@@ -33,10 +32,18 @@ function add(e) {
   btn1.addEventListener('click',(e)=>{
     if (e.target.innerHTML=="Remove") { 
       let  name = pera.innerText 
-      rem(name)
+      rem(name.toLocaleLowerCase())
     div.remove()
     } 
   })
+  // btn2.addEventListener('click',(e)=>{
+  //   if (e.target.innerHTML=="Edit") { 
+  //     let  name = pera.innerText 
+  //     Edit(name.toLocaleLowerCase())
+  //     input.value=name
+    
+  //   } 
+  // })
  
   p.append(div);
 }
@@ -51,6 +58,8 @@ btn.addEventListener("click", (e) => {
 
     add(inputvalue);
     input.value = "";
+
+
   }
 });
 
@@ -68,5 +77,8 @@ function flter() {
   }
 
 flter()
+
+
+
 
 

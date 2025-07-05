@@ -1,14 +1,8 @@
 const btn = document.querySelector("button");
 const input = document.querySelector("input");
-const p = document.querySelector(".main");
+const main = document.querySelector(".main");
 const my = [];
-
-function add(e) {
-  const pera = document.createElement("p");
-  const btn1 = document.createElement("button");
-  const btn2 = document.createElement("button");
-  const div = document.createElement("div");
-  function rem(name) {
+function rem(name) {
     const to = get()
 
    let hi = to.filter((i)=>{
@@ -19,23 +13,24 @@ function add(e) {
   set(hi)
     
   }
+
+function add(e) {
+  const card = document.createElement("div");
+  const p = document.createElement("p");
+  const btndiv = document.createElement("div");
+  const EditBtn = document.createElement("button");
+  const RemoveBtn = document.createElement("button");
+  card.classList.add("card");
+  EditBtn.classList.add("EditBtn");
+  RemoveBtn.classList.add("RemoveBtn");
+  EditBtn.innerText = "Edit";
+  RemoveBtn.innerText = "Remove";
+  btndiv.classList.add('btn')
+  btndiv.append(EditBtn,RemoveBtn)
+  p.innerHTML = e;
+  card.append(p, btndiv );
+  main.append(card)
  
-  div.classList.add("card");
-   
-  btn1.classList.add("btn1");
-  btn1.setAttribute('onclick', "console.log(e)");
-  btn2.classList.add("btn2");
-  btn1.innerHTML = "Remove";
-  btn2.innerHTML = "Edit";
-  pera.innerHTML = e;
-  div.append(pera, btn1, btn2);
-  btn1.addEventListener('click',(e)=>{
-    if (e.target.innerHTML=="Remove") { 
-      let  name = pera.innerText 
-      rem(name.toLocaleLowerCase())
-    div.remove()
-    } 
-  })
   // btn2.addEventListener('click',(e)=>{
   //   if (e.target.innerHTML=="Edit") { 
   //     let  name = pera.innerText 
@@ -45,7 +40,7 @@ function add(e) {
   //   } 
   // })
  
-  p.append(div);
+  // p.append(div);
 }
 
 btn.addEventListener("click", (e) => {
@@ -57,6 +52,7 @@ btn.addEventListener("click", (e) => {
     
 
     add(inputvalue);
+
     input.value = "";
 
 

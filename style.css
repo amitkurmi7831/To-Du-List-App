@@ -46,50 +46,44 @@ input{
 }
 .card{
     width: 100%;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 1px green;
+    margin-top: 5px ;
+    margin-bottom: 10px;
+
+
+    display: flex;
+    justify-content: space-between;
     position: relative;
 
 
 }
 p{
-    width: 100%;
-    height: 40px;
-    /* margin: 20px; */
-    margin-top: 10px;
-    display: flex;
-    justify-content: start;
-    padding: 10px;
-    align-items: center;
-    box-shadow: 0px 0px 2px rgb(248, 30, 14);
     
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 8px;
-    color: rgba(26, 24, 24, 0.808);
+    font-size: 24px;
+    color: rgb(18, 19, 18);
+    font-weight: bold;
 
 }
-.card .btn1{
-    position: absolute;
-    right: 10px;
-    bottom: 5px;
+.card .btn{
+    display: flex;
+    /* background-color: green; */
+    gap: 10px;
+    
+}
+.card button{
     height: 30px;
     width: 70px;
-    font-size: 18px;
-    background-color: rgb(241, 66, 13);
+    font-size: 16px;
+    background-color: rgb(255, 17, 0);
     color: white;
     border-radius: 5px;
     outline: none;
+    border: none;
     cursor: pointer;
 }
-.card .btn2{
-    position: absolute;
-    right: 100px;
-    bottom: 5px;
-    height: 30px;
-    width: 60px;
-    font-size: 18px;
-    background-color: rgb(27, 25, 194);
-    color: white;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
+.card .EditBtn{
+    background-color: rgb(37, 40, 228);
+
 }
